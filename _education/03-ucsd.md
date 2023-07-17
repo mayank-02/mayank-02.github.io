@@ -1,0 +1,13 @@
+---
+title: University of California, San Diego
+subtitle: Masters in Computer Science and Engineering 
+location: California, USA
+date_string: 2021 - 2023
+link: https://www.ucsd.edu
+---
+
+<span class="text-underline">Graduate Coursework:</span>
+
+* Operating Systems
+* Principles of Database Systems
+* Web Mining and Recommender Systems

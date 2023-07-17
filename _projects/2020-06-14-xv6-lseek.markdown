@@ -1,0 +1,11 @@
+---
+layout: post
+title: lseek in xv6 OS
+tagline: Implementation of lseek syscall in xv6 operating system
+card_color: "#CB356B"
+image_path: /images/portfolio-xv6-lseek.png
+skills: c operating-systems git make
+filters: software
+github: https://github.com/mayank-02/xv6-public
+order: 4
+---

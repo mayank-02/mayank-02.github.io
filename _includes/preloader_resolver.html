@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    window.loading_screen.finish();
+</script>
+
+{% if jekyll.environment == "production" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6V4KXW6JYR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6V4KXW6JYR');
+</script>
+{% endif %}

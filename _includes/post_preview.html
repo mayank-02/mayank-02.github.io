@@ -1,0 +1,22 @@
+{% if page.is_post %}
+    {% assign post_type = "writeup" %}
+{% elsif page.is_project %}
+    {% assign post_type = "project" %}
+{% endif %}
+
+{% assign next_post = page.next %}
+{% assign previous_post = page.previous %}
+
+<div class="post-preview">
+    <div class="wrapper">
+        previews.txt<br>
+        ------------<br>
+        <a class="preview-link" href="/">-> home</a><br>
+        {% if next_post %}
+            <a class="preview-link" href="{{ next_post.url }}">-> next_{{ post_type }}</a><br>
+        {% endif %}
+        {% if previous_post %}
+            <a class="preview-link" href="{{ previous_post.url }}">-> previous_{{ post_type }}</a>
+        {% endif %}
+    </div>
+</div>

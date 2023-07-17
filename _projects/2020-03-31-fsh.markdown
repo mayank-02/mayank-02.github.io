@@ -1,0 +1,11 @@
+---
+layout: post
+title: Shell Interpreter
+tagline: Simple command interpreter a.k.a job control shell for Unix
+card_color: "#95A5A6"
+image_path: /images/portfolio-fsh.png
+skills: c operating-systems shell git make
+filters: software
+github: https://github.com/mayank-02/fsh
+order: 2
+---

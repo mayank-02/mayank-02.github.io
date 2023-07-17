@@ -1,0 +1,42 @@
+<link href="/css/please-wait.css" rel="stylesheet">
+<script type="text/javascript" src="/javascripts/please-wait.min.js"></script>
+<script type="text/javascript">
+    const loadingMessages = [
+        "Convincing the pixels to align perfectly...",
+        "Counting the seconds until the page loads...",
+        "Creating more memes for the internet...",
+        "Digging for treasure...",
+        "Downloading extra RAM...",
+        "Drinking more masala chai...",
+        "Escaping the loading page...",
+        "Figuring out how to close vim...",
+        "Finding more friends...",
+        "Finding the stash of loading messages...",
+        "Loading a humorous message...",
+        "Looking around at how lucky we are to be alive right now...",
+        "Not throwing away his shot...",
+        "Optimizing algorithms for maximum efficiency...",
+        "Organizing the chaos...",
+        "Putting the final touches on a masterpiece...",
+        "Replacing error messages with jokes...",
+        "Rhyming with finesse, loading with impress...",
+        "Searching for the meaning of life...",
+        "Sending a Slack message...",
+        "Shipping quickly and often...",
+        "Solving more maths problems...",
+        "Sorting the lines...",
+        "Summoning the website gods...",
+        "Taking some photos...",
+        "Thinking past tomorrow...",
+        "Tightening loose screws...",
+        "Trying to catch them all...",
+        "Trying to go faster...",
+        "Writing every night like he's running out of time..."
+    ]
+    const loadingMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+    window.loading_screen = window.pleaseWait({
+        logo: "/images/logo.svg",
+        backgroundColor: '#18212D',
+        loadingHtml: loadingMessage + "<div class='spinner'><div class='double-bounce1'></div><div class='double-bounce2'></div></div>"
+    });
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include head.html %}
+        {% seo title=false %}
+        <style>
+            .post-content a {
+                {% if page.link_color %}
+                    color: {{ page.link_color }};
+                {% else %}
+                    color: {{ page.card_color }};
+                {% endif %}
+            }
+        </style>
+    </head>
+    <body>
+        {% include preloader.html %}
+        {% include scripts.html %}
+        <main>
+            <header id="header" class="article-header">
+                <div class="wrapper">
+                    <div class="left">
+                        <a href="/" class="logo-container">
+                            <img src="/images/logo.svg" class="logo" alt="The logo of the site.">
+                        </a>
+                        <div class="intro">
+                            <div class="page-type">
+                                {% if page.is_post %}
+                                    Post:
+                                {% elsif page.is_project %}
+                                    Project:
+                                {% else %}
+                                    Writeup:
+                                {% endif %}
+                            </div>
+                            <h1 class="page-title">
+                                {{ page.title }}
+                            </h1>
+                            <div class="page-tagline">
+                                {% if page.is_post %}
+                                    {{ page.date | date: "%B %d, %Y" }}
+                                {% else %}
+                                    {{ page.tagline }}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        {% include navigation_links.html %}
+                    </div>
+                </div>
+            </header>
+            <div class="color-detail" style="background: {{ page.card_color }};"></div>
+            <div class="wrapper">
+                <article class="post-content">
+                    {{ content }}
+                    {% if page.ending %}
+                        <div class="post-ending">
+                            <div class="ending-tagline">
+                                {{ page.ending.tagline }}
+                            </div>
+                            {% if page.ending.link and page.ending.link_text %}
+                                <a href="{{ page.ending.link }}" class="ending-button">
+                                    {{ page.ending.link_text }}
+                                    <i class="fa fa-long-arrow-right post-ending-arrow" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </article>
+            </div>
+        </main>
+        {% include post_preview.html %}
+        <div class="color-detail" style="background: {{ page.card_color }};"></div>
+        {% include footer.html %}
+        {% include preloader_resolver.html %}
+    </body>
+</html>

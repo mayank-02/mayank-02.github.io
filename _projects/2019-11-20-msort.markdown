@@ -1,0 +1,11 @@
+---
+layout: post
+title: Command Line Sorting Utility
+tagline: Sort lines of text files
+card_color: "#41D9F4"
+image_path: /images/portfolio-msort.png
+skills: c data-structures algortihms external-sorting git make
+filters: software
+github: https://github.com/mayank-02/msort
+order: 3
+---

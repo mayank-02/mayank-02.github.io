@@ -1,0 +1,63 @@
+title: Mayank Jain
+email: mayank20399@gmail.com
+description: Mayank Jain is a computer scientist, and a systems engineer.
+baseurl: ""
+
+markdown: kramdown
+
+sass:
+  style: compressed
+
+timezone: America/New_York
+
+github_username: mayank-02
+
+repository: mayank-02/mayank-02.github.io
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+
+# jekyll-seo-tag options.
+# Refer to https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+seo:
+  name: Mayank Jain
+  type: Person
+# url: https://jainmayank.me
+twitter:
+  username: mayank-02
+social:
+  name: Mayank Jain
+  links:
+    - https://www.instagram.com/mayaank_jain
+    - https://github.com/mayank-02
+    - https://www.linkedin.com/in/mayank-v-jain
+
+collections:
+  projects:
+    output: true
+    permalink: /project/:title/
+  experience:
+    output: true
+  education:
+    output: true
+  notes:
+    output: false
+    permalink: /notes/:slug/
+  awards:
+    output: false
+  teaching:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      is_note: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      is_project: true

@@ -1,0 +1,86 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Variables
+$monospace-fonts: "SF Mono", "Lucida Console", "Monaco", monospace;
+$sans-serif-fonts: "DM Sans", "Lato", "Verdana", "Helvetica Neue", "Helvetica", sans-serif;
+$serif-fonts: "Macklin Text", "Charter", "Garamond", "Palatino", "Times New Roman", "Times", serif;
+
+$base-font-family: "SF Mono", "Lucida Console", "Monaco", monospace;
+$base-font-color:  #000000;
+$base-font-size:   17px;
+$base-font-weight: 400;
+
+$small-font-size: 25px;
+
+$gray-bg-color:   #292929;
+$gray-font-color: #FFFFFF;
+
+$link-color: #B93838;
+
+$article-card-color:          #979797;
+$article-card-interior-color: #EAEAEA;
+$article-card-image-color:    #BCBCBC;
+
+$container-max-width: 1200px;
+
+$wrapper-max-width: 980px;
+
+$header-sm-break-size: 920px;
+
+$header-background-color: #18212D;
+$header-logo-width:         190px;
+$header-logo-sm-width:      160px;
+$header-sm-size:             36px;
+
+$post-intro-height:         250px;
+$post-intro-max-width:      750px;
+$post-intro-title-size:      42px;
+$post-intro-tagline-size:    30px;
+$post-intro-title-sm-size:   36px;
+$post-intro-tagline-sm-size: 24px;
+
+$post-font-size:        22px;
+$post-small-font-size:  20.5px;
+$post-tiny-font-size:   19px;
+$post-font-weight:      400;
+$post-link-font-weight: 500;
+$post-link-color:       #006DFF;
+
+$photo-grid-extension:          100px;
+$photo-grid-horizontal-padding:   5px;
+
+$post-wrapper-max-width: 870px;
+
+$post-preview-height:              180px;
+$post-preview-direction-font-size:  20px;
+$post-preview-title-font-size:      42px;
+$post-preview-title-sm-font-size:   36px;
+$post-preview-tagline-font-size:    18px;
+
+$post-ending-height:  200px;
+$post-ending-z-index: 100;
+
+$post-ending-tagline-size:    32px;
+$post-ending-tagline-sm-size: 26px;
+
+$post-ending-button-font-size:  26px;
+$post-ending-button-max-width:  260px;
+$post-ending-button-background: #FFFFFF;
+$post-ending-button-font-color: #000000;
+
+$rainbow-one:   #D8D8D8;
+$rainbow-two:   #5197E8;
+$rainbow-three: #50E3C2;
+$rainbow-four:  #F5A623;
+$rainbow-five:  #F8E71C;
+$rainbow-six:   #DB2FFF;
+$rainbow-seven: #FF5757;
+
+// Imports
+@import "normalize";
+@import "syntax";
+@import "fonts";
+@import "styles";

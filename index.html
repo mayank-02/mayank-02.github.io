@@ -1,0 +1,251 @@
+---
+title: "Home"
+layout: default
+regenerate: true
+---
+
+<header id="header" class="landing-header">
+    <div class="wrapper">
+        <div class="left">
+            <a href="/" class="logo-container">
+                <img src="/images/logo.svg" class="logo" alt="The logo of the site.">
+            </a>
+            <div class="intro">
+                {% include landing_intro.html %}
+            </div>
+        </div>
+        <div class="right">
+            {% include navigation_links.html %}
+            <div class="commit-history">
+                {% assign site_repository = site.github["public_repositories"] | last %}
+                Last updated with commit
+                <span class="commit-sha">
+                    <a href="https://github.com/mayank-02/mayank-02.github.io/commits/master">
+                        @{{ site.github["build_revision"] | truncate: 8, "" }}
+                    </a>
+                </span>
+                <br>
+                on {{ site_repository["pushed_at"] }}
+            </div>
+        </div>
+    </div>
+</header>
+<section class="cv-section">
+    <div class="wrapper">
+        <div class="small-wrapper">
+            <div class="section-box">
+                <div class="section-title black-text">About</div>
+            </div>
+            <div class="cv-section-intro">
+                {% include markdown_renderer.html markdown_file="introduction.md" %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cv-section yellow-cv-section">
+    <div class="wrapper">
+        <div class="small-wrapper">
+            <div class="section-box">
+                <div class="section-title black-text">News</div>
+            </div>
+            <div class="cv-section-intro">
+                {% assign max_post = 5 %}
+                {% assign counter = 0 %}
+                {% for announcement in site.data.news %}
+                    <div class="news-item {% if counter >= max_post %}news-item-hidden{% endif %}">
+                        <div class="news-date">{{ announcement.date }}</div>
+                        <div class="news-description">{{ announcement.text | markdownify }}</div>
+                    </div>
+                    {% assign counter = counter | plus: 1 %}
+                {% endfor %}
+                <div class="link-box news-toggle-button">
+                    Show older news
+                </div>
+            </div>
+            <script>
+                const button = document.querySelector('.news-toggle-button');
+                const hiddenItems = document.querySelectorAll('.news-item-hidden');
+                let isHidden = true;
+                button.addEventListener('click', () => {
+                  button.textContent = isHidden
+                  ? 'Hide older news'
+                  : 'Show older news';
+
+                  isHidden = !isHidden;
+                  hiddenItems.forEach(item => item.classList.toggle('news-item-hidden'));
+                });
+            </script>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="wrapper">
+        <div class="section-box">
+            <div class="section-title black-text">Projects</div>
+        </div>
+        {% comment %}
+        <div class="project-filters">
+            > Mayank.projects.filter({(p): p.type ==
+            <span data-filter="*" class="filter-option selected">all</span>
+            <span data-filter=".software" class="filter-option">software</span>
+            <span data-filter=".academic" class="filter-option">academic</span>
+            <span data-filter=".games" class="filter-option">games</span>
+            <span data-filter=".case_studies" class="filter-option">case_studies</span>
+            <span data-filter=".fun_things" class="filter-option">fun_things</span>
+            })
+        </div>
+        {% endcomment %}
+        <div class="projects">
+            {% assign combined_collections = site.projects %}
+            {% assign sorted_projects = combined_collections | sort: 'order' %}
+            {% for project in sorted_projects %}
+                {% include project_card.html project=project %}
+                {% if forloop.last == false %}
+                  <div class="project-gutter-sizer"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% comment %}
+        <div class="no-projects-message">
+            <div class="big-message">Sorry, there's nothing here yet.</div>
+            <div class="small-message">(Try a different filter!)</div>
+        </div>
+        {% endcomment %}
+    </div>
+</section>
+{% comment %}
+<section id="publications" class="cv-section cv-section gray-cv-section">
+    <div class="wrapper">
+        <div class="small-wrapper">
+            <div class="section-box">
+                <div class="section-title black-text">Publications</div>
+            </div>
+            <div>
+                {% for publication in site.data.publications %}
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-header-main">
+                                {{ publication.title }}
+                            </div>
+                            <div class="cv-item-header-right">
+                            </div>
+                        </div>
+                        <div class="cv-item-subtitle">
+                            {% for author in publication.authors %}
+                                {% if author.website %}<a href="{{ author.website }}" style="text-decoration: none;">{% endif %}<span {% if author.self %}style="font-weight: 600;"{% endif %}>{{ author.name }}</span>{% if author.website %}</a>{% endif %}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                            {% if publication.author_note %}<i>({{ publication.author_note }})</i>{% endif %}
+                            <div class='vertical-spacer spacer-tiny'></div>
+                            {{ publication.venue }}{% if publication.location %} ({{ publication.location }}){% endif %}, {{ publication.month }} {{ publication.year }}
+                        </div>
+                        <div class="cv-item-description">
+                            {{ publication.abstract | rstrip | markdownify }}
+                        </div>
+                        {% for link in publication.links %}
+                            <div class="link-box black-text">
+                                <a href="{{ link.url }}" style="color: black; text-decoration: none;">{{ link.name }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cv-section gray-cv-section">
+    <div class="wrapper">
+        <div class="small-wrapper">
+            <div class="section-box">
+                <div class="section-title black-text">Teaching</div>
+            </div>
+            <div class="cv-section-intro">
+                I served as a teaching assistant every semester I was
+                at Brown University, sometimes even during semesters I wasn't
+                enrolled. Semesters marked with an asterisk (*) denote a Head
+                Teaching Assistant role.
+            </div>
+            <hr>
+            <div>
+                {% assign sorted_teaching = site.teaching | reverse %}
+                {% for teaching in sorted_teaching %}
+                    {% include cv_item.html link=teaching.course_link
+                                            main_header=teaching.title
+                                            subtitle=teaching.semester
+                                            content=teaching.content %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endcomment %}
+<section class="cv-section">
+    <div class="wrapper">
+        <div class="small-wrapper">
+            <div class="section-box">
+                <div class="section-title black-text">Experience</div>
+            </div>
+            <div>
+                {% assign sorted_experience = site.experience | reverse %}
+                {% for experience in sorted_experience %}
+                    {% assign experience_subtitle = experience.tagline
+                                                | append: "<div class='vertical-spacer spacer-tiny'></div>"
+                                                | append: experience.date_string %}
+                    {% include cv_item.html link=experience.link
+                                            main_header=experience.title
+                                            right_header=experience.location
+                                            subtitle=experience_subtitle
+                                            content=experience.content %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cv-section">
+    <div class="wrapper">
+        <div class="small-wrapper">
+            <div class="section-box">
+                <div class="section-title black-text">Education</div>
+            </div>
+            <div>
+                {% assign sorted_education = site.education | reverse %}
+                {% for education in sorted_education %}
+                    {% assign education_subtitle = education.subtitle
+                        | append: "<div class='vertical-spacer spacer-tiny'></div>"
+                        | append: education.date_string %}
+                    {% include cv_item.html link=education.link
+                                            main_header=education.title
+                                            right_header=education.location
+                                            subtitle=education.date_string
+                                            subtitle=education_subtitle
+                                            content=education.content %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var $projects = $('.projects').isotope({
+        itemSelector: '.project-box',
+        layoutMode: 'fitRows',
+        percentPosition: true,
+        fitRows: {
+          gutter: '.project-gutter-sizer'
+        }
+    });
+
+    $('.project-filters').on('click', '.filter-option', function() {
+        var $filterButton = $(this);
+        var filterValue = $filterButton.attr('data-filter');
+        $projects.isotope({ filter: filterValue });
+
+        $('.filter-option.selected').removeClass('selected');
+        $filterButton.addClass('selected');
+
+        var $noProjectsMessage = $('.no-projects-message');
+        if (!$projects.data('isotope').filteredItems.length) {
+            $noProjectsMessage.show();
+        } else {
+            $noProjectsMessage.hide();
+        }
+    });
+</script>
