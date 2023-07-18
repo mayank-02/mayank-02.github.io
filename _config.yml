@@ -24,7 +24,7 @@ plugins:
 seo:
   name: Mayank Jain
   type: Person
-# url: https://jainmayank.me
+url: https://jainmayank.me
 twitter:
   username: mayank-02
 social:
