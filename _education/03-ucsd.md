@@ -2,7 +2,7 @@
 title: University of California, San Diego
 subtitle: Masters in Computer Science and Engineering 
 location: California, USA
-date_string: 2021 - 2023
+date_string: 2023 - 2025
 link: https://www.ucsd.edu
 ---
 
