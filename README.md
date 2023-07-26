@@ -1,4 +1,4 @@
-# personal-website
+# Mayank Jain's Personal Website
 The current version of my personal website, built using Jekyll.
 
 ## Installation
