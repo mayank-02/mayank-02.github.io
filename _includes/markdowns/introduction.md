@@ -1,6 +1,6 @@
 My name is Mayank. My pronouns are he/him/his. I am pursuing a Masters in Computer Science and Engineering at the [University of California, San Diego (UCSD)](https://www.ucsd.edu).
 
-My fascination lies in the realms of Distributed Systems and Databases, where I find myself deeply engrossed. I am driven by the desire to conduct research with the ultimate aim of building robust, production-quality systems.
+Distributed Systems and Databases fascinate me. I am driven by the desire to conduct research with the ultimate aim of building robust, production-quality systems.
 
 Previously, I worked in software engineering at [D. E. Shaw & Co.](https://deshaw.com) and have also interned at [NVIDIA](https://www.nvidia.com) and [Hexagon](https://www.hexagon.com). I completed my undergraduate education in Computer Science from [College of Engineering, Pune](https://www.coep.org.in), graduating top of my class with honors and winning the [gold medal](https://www.youtube.com/live/_uAr9CUfYOo?feature=share&t=4800)!
 
