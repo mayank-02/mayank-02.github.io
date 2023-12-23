@@ -11,3 +11,5 @@ link: https://www.ucsd.edu
 * Operating Systems
 * Principles of Database Systems
 * Web Mining and Recommender Systems
+* Virtualization
+* Algorithm Design and Analysis
