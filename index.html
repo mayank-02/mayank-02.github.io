@@ -152,19 +152,13 @@ regenerate: true
         </div>
     </div>
 </section>
+{% endcomment %}
 <section class="cv-section gray-cv-section">
     <div class="wrapper">
         <div class="small-wrapper">
             <div class="section-box">
                 <div class="section-title black-text">Teaching</div>
             </div>
-            <div class="cv-section-intro">
-                I served as a teaching assistant every semester I was
-                at Brown University, sometimes even during semesters I wasn't
-                enrolled. Semesters marked with an asterisk (*) denote a Head
-                Teaching Assistant role.
-            </div>
-            <hr>
             <div>
                 {% assign sorted_teaching = site.teaching | reverse %}
                 {% for teaching in sorted_teaching %}
@@ -177,7 +171,6 @@ regenerate: true
         </div>
     </div>
 </section>
-{% endcomment %}
 <section class="cv-section">
     <div class="wrapper">
         <div class="small-wrapper">
