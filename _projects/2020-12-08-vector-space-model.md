@@ -7,5 +7,5 @@ image_path: /images/portfolio-vector-space-model.png
 skills: python information-retrieval nlp
 filters: software
 github: https://github.com/mayank-02/vector-space-model
-order: 6
+order: 8
 ---
