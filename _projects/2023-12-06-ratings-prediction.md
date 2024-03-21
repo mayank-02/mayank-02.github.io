@@ -7,5 +7,5 @@ image_path: /images/portfolio-ratings-prediction.png
 skills: python recommender-systems pandas numpy scikit-learn
 filters: report
 github: /reports/ratings-prediction.pdf
-order: 7
+order: 9
 ---

@@ -7,5 +7,5 @@ image_path: /images/portfolio-system-measurement.png
 skills: c operating-systems git make
 filters: software
 github: /reports/system-measurement.pdf
-order: 4
+order: 5
 ---
