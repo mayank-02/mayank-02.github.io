@@ -3,7 +3,7 @@ layout: post
 title: Simplified DES
 tagline: Implementation of a simplified version of the DES algorithm
 card_color: "#00B4DB"
-image_path: /images/portfolio-saes.png
+image_path: /images/projects/portfolio-saes.png
 skills: python cryptography git make
 filters: software
 github: https://github.com/mayank-02/simplified-des
