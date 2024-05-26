@@ -14,3 +14,4 @@ link: https://www.ucsd.edu
 * Database Systems Implementation
 * Algorithm Design and Analysis
 * Graduate Networked Systems
+* Virtualization and Cloud Computing
