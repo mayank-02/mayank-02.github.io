@@ -5,7 +5,7 @@ tagline: Comprehensive analysis on the Food.com dataset to uncover factors influ
 card_color: "#8E43AC"
 image_path: /images/projects/portfolio-ratings-prediction.png
 skills: python recommender-systems pandas numpy scikit-learn
-filters: report
+filters: report python
 github: /reports/ratings-prediction.pdf
-order: 9
+order: 11
 ---

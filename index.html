@@ -24,7 +24,7 @@ regenerate: true
                     </a>
                 </span>
                 <br>
-                on 2024-03-30 08:35:15 UTC
+                on 2024-06-30 08:35:15 UTC
             </div>
         </div>
     </div>
@@ -51,11 +51,11 @@ regenerate: true
                 {% assign max_post = 5 %}
                 {% assign counter = 0 %}
                 {% for announcement in site.data.news %}
-                    <div class="news-item {% if counter >= max_post %}news-item-hidden{% endif %}">
-                        <div class="news-date">{{ announcement.date }}</div>
-                        <div class="news-description">{{ announcement.text | markdownify }}</div>
-                    </div>
-                    {% assign counter = counter | plus: 1 %}
+                <div class="news-item {% if counter >= max_post %}news-item-hidden{% endif %}">
+                    <div class="news-date">{{ announcement.date }}</div>
+                    <div class="news-description">{{ announcement.text | markdownify }}</div>
+                </div>
+                {% assign counter = counter | plus: 1 %}
                 {% endfor %}
                 <div class="link-box news-toggle-button">
                     Show older news
@@ -66,12 +66,12 @@ regenerate: true
                 const hiddenItems = document.querySelectorAll('.news-item-hidden');
                 let isHidden = true;
                 button.addEventListener('click', () => {
-                  button.textContent = isHidden
-                  ? 'Hide older news'
-                  : 'Show older news';
+                    button.textContent = isHidden
+                        ? 'Hide older news'
+                        : 'Show older news';
 
-                  isHidden = !isHidden;
-                  hiddenItems.forEach(item => item.classList.toggle('news-item-hidden'));
+                    isHidden = !isHidden;
+                    hiddenItems.forEach(item => item.classList.toggle('news-item-hidden'));
                 });
             </script>
         </div>
@@ -82,26 +82,28 @@ regenerate: true
         <div class="section-box">
             <div class="section-title black-text">Projects</div>
         </div>
-        {% comment %}
         <div class="project-filters">
             > Mayank.projects.filter({(p): p.type ==
-            <span data-filter="*" class="filter-option selected">all</span>
-            <span data-filter=".software" class="filter-option">software</span>
-            <span data-filter=".academic" class="filter-option">academic</span>
-            <span data-filter=".games" class="filter-option">games</span>
-            <span data-filter=".case_studies" class="filter-option">case_studies</span>
-            <span data-filter=".fun_things" class="filter-option">fun_things</span>
+            <span data-filter="*" class="filter-option">all</span>
+            <span data-filter=".top" class="filter-option selected">top</span>
+            <span data-filter=".c" class="filter-option">C</span>
+            <span data-filter=".python" class="filter-option">python</span>
+            <span data-filter=".golang" class="filter-option">golang</span>
+            <span data-filter=".java" class="filter-option">java</span>
+            <span data-filter=".systems" class="filter-option">systems</span>
+            <span data-filter=".cli" class="filter-option">cli</span>
+            <span data-filter=".library" class="filter-option">library</span>
+            <span data-filter=".educational" class="filter-option">educational</span>
             })
         </div>
-        {% endcomment %}
         <div class="projects">
             {% assign combined_collections = site.projects %}
             {% assign sorted_projects = combined_collections | sort: 'order' %}
             {% for project in sorted_projects %}
-                {% include project_card.html project=project %}
-                {% if forloop.last == false %}
-                  <div class="project-gutter-sizer"></div>
-                {% endif %}
+            {% include project_card.html project=project %}
+            {% if forloop.last == false %}
+            <div class="project-gutter-sizer"></div>
+            {% endif %}
             {% endfor %}
         </div>
         {% comment %}
@@ -121,31 +123,34 @@ regenerate: true
             </div>
             <div>
                 {% for publication in site.data.publications %}
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <div class="cv-item-header-main">
-                                {{ publication.title }}
-                            </div>
-                            <div class="cv-item-header-right">
-                            </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <div class="cv-item-header-main">
+                            {{ publication.title }}
                         </div>
-                        <div class="cv-item-subtitle">
-                            {% for author in publication.authors %}
-                                {% if author.website %}<a href="{{ author.website }}" style="text-decoration: none;">{% endif %}<span {% if author.self %}style="font-weight: 600;"{% endif %}>{{ author.name }}</span>{% if author.website %}</a>{% endif %}{% unless forloop.last %}, {% endunless %}
-                            {% endfor %}
-                            {% if publication.author_note %}<i>({{ publication.author_note }})</i>{% endif %}
-                            <div class='vertical-spacer spacer-tiny'></div>
-                            {{ publication.venue }}{% if publication.location %} ({{ publication.location }}){% endif %}, {{ publication.month }} {{ publication.year }}
+                        <div class="cv-item-header-right">
                         </div>
-                        <div class="cv-item-description">
-                            {{ publication.abstract | rstrip | markdownify }}
-                        </div>
-                        {% for link in publication.links %}
-                            <div class="link-box black-text">
-                                <a href="{{ link.url }}" style="color: black; text-decoration: none;">{{ link.name }}</a>
-                            </div>
-                        {% endfor %}
                     </div>
+                    <div class="cv-item-subtitle">
+                        {% for author in publication.authors %}
+                        {% if author.website %}<a href="{{ author.website }}" style="text-decoration: none;">{% endif
+                            %}<span {% if author.self %}style="font-weight: 600;" {% endif %}>{{ author.name }}</span>{%
+                            if author.website %}</a>{% endif %}{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                        {% if publication.author_note %}<i>({{ publication.author_note }})</i>{% endif %}
+                        <div class='vertical-spacer spacer-tiny'></div>
+                        {{ publication.venue }}{% if publication.location %} ({{ publication.location }}){% endif %}, {{
+                        publication.month }} {{ publication.year }}
+                    </div>
+                    <div class="cv-item-description">
+                        {{ publication.abstract | rstrip | markdownify }}
+                    </div>
+                    {% for link in publication.links %}
+                    <div class="link-box black-text">
+                        <a href="{{ link.url }}" style="color: black; text-decoration: none;">{{ link.name }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
                 {% endfor %}
             </div>
         </div>
@@ -161,10 +166,10 @@ regenerate: true
             <div>
                 {% assign sorted_teaching = site.teaching | reverse %}
                 {% for teaching in sorted_teaching %}
-                    {% include cv_item.html link=teaching.course_link
-                                            main_header=teaching.title
-                                            subtitle=teaching.semester
-                                            content=teaching.content %}
+                {% include cv_item.html link=teaching.course_link
+                main_header=teaching.title
+                subtitle=teaching.semester
+                content=teaching.content %}
                 {% endfor %}
             </div>
         </div>
@@ -179,14 +184,14 @@ regenerate: true
             <div>
                 {% assign sorted_experience = site.experience | reverse %}
                 {% for experience in sorted_experience %}
-                    {% assign experience_subtitle = experience.tagline
-                                                | append: "<div class='vertical-spacer spacer-tiny'></div>"
-                                                | append: experience.date_string %}
-                    {% include cv_item.html link=experience.link
-                                            main_header=experience.title
-                                            right_header=experience.location
-                                            subtitle=experience_subtitle
-                                            content=experience.content %}
+                {% assign experience_subtitle = experience.tagline
+                | append: "<div class='vertical-spacer spacer-tiny'></div>"
+                | append: experience.date_string %}
+                {% include cv_item.html link=experience.link
+                main_header=experience.title
+                right_header=experience.location
+                subtitle=experience_subtitle
+                content=experience.content %}
                 {% endfor %}
             </div>
         </div>
@@ -201,15 +206,15 @@ regenerate: true
             <div>
                 {% assign sorted_education = site.education | reverse %}
                 {% for education in sorted_education %}
-                    {% assign education_subtitle = education.subtitle
-                        | append: "<div class='vertical-spacer spacer-tiny'></div>"
-                        | append: education.date_string %}
-                    {% include cv_item.html link=education.link
-                                            main_header=education.title
-                                            right_header=education.location
-                                            subtitle=education.date_string
-                                            subtitle=education_subtitle
-                                            content=education.content %}
+                {% assign education_subtitle = education.subtitle
+                | append: "<div class='vertical-spacer spacer-tiny'></div>"
+                | append: education.date_string %}
+                {% include cv_item.html link=education.link
+                main_header=education.title
+                right_header=education.location
+                subtitle=education.date_string
+                subtitle=education_subtitle
+                content=education.content %}
                 {% endfor %}
             </div>
         </div>
@@ -221,11 +226,12 @@ regenerate: true
         layoutMode: 'fitRows',
         percentPosition: true,
         fitRows: {
-          gutter: '.project-gutter-sizer'
+            gutter: '.project-gutter-sizer'
         }
     });
 
-    $('.project-filters').on('click', '.filter-option', function() {
+    // Filter items on button click
+    $('.project-filters').on('click', '.filter-option', function () {
         var $filterButton = $(this);
         var filterValue = $filterButton.attr('data-filter');
         $projects.isotope({ filter: filterValue });
@@ -240,4 +246,7 @@ regenerate: true
             $noProjectsMessage.hide();
         }
     });
+
+    // Initially filter by 'top'
+    $projects.isotope({ filter: '.top' });
 </script>

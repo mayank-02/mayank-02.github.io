@@ -5,7 +5,7 @@ tagline: Profiled Ubuntu laptop hardware. Measured CPU operations overhead, anal
 card_color: "#E461FF"
 image_path: /images/projects/portfolio-system-measurement.png
 skills: c operating-systems git make
-filters: software
+filters: c systems
 github: /reports/system-measurement.pdf
-order: 5
+order: 7
 ---
