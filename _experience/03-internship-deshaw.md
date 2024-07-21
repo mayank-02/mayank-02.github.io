@@ -3,7 +3,7 @@ title: D. E. Shaw & Co.
 date_string: Apr 2020 – Jun 2020
 location: Remote
 tagline: Systems Intern
-link: http://www.deshawindia.com
+link: https://www.deshawindia.com
 ---
 
 * Designed and developed a highly scalable, centralized notification service of distributed nature from scratch, which abstracted

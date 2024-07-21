@@ -3,7 +3,7 @@ title: D. E. Shaw & Co.
 date_string: Jul 2021 – Jul 2023
 location: Hyderabad, India
 tagline: Member Technical, Systems
-link: http://www.deshawindia.com
+link: https://www.deshawindia.com
 ---
 
 * Implemented an **Authentication adapter for ADFS** in C# that allowed to choose amongst the multiple authentication methods the firm supports to allow for custom MFA workflows, which is used by all of the firms’ 4000+ users.
