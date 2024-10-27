@@ -14,6 +14,6 @@ CGPA: 9.82 / 10
 * Algorithms and Complexity
 * Computer Networks
 * Computer Organization
-* Theory of Computation
+* Advanced UNIX Programming
 * Principles of Programming Languages
 * ... and many more

@@ -15,3 +15,5 @@ link: https://www.ucsd.edu
 * Algorithm Design and Analysis
 * Graduate Networked Systems
 * Virtualization and Cloud Computing
+* Computer Communication Networks
+* Statistical Natural Language Processing

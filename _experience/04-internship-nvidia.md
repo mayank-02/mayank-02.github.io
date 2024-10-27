@@ -6,5 +6,4 @@ tagline: Software Intern, Autonomous Vehicles
 link: https://www.nvidia.com
 ---
 
-* Addressed performance anomalies observed in Roadrunner (NVIDIA’s Autonomous Driving application) during driving which affects
-safety and in-car driving experience by identifying, tracking, and addressing end-to-end latency spikes.
+* Optimized C++ **autonomous driving application** by reducing 99th percentile latencies, ensuring smooth real-time vehicle operations. Improved system reliability and safety for real-time decision-making during vehicle navigation.

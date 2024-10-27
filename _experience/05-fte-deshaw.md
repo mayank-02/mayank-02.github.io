@@ -2,13 +2,12 @@
 title: D. E. Shaw & Co.
 date_string: Jul 2021 – Jul 2023
 location: Hyderabad, India
-tagline: Member Technical, Systems
+tagline: Software Developer
 link: https://www.deshawindia.com
 ---
 
-* Implemented an **Authentication adapter for ADFS** in C# that allowed to choose amongst the multiple authentication methods the firm supports to allow for custom MFA workflows, which is used by all of the firms’ 4000+ users.
-* Revamped the **On-call management and scheduling system** for Systems, which included implementing a Django based web-app (desktop + mobile) secured by OIDC and deployed on K8s, and a typer based CLI packaged with Nix.
-* Developed a C# based **Web proxy** and corresponding Binary PowerShell Cmdlets, providing fine-grained authorization to HYPR APIs and streamlining user/device management workflows for the Helpdesk team.
-* Conducted **Benchmarking of on-prem Kubernetes cluster** against in-house hosting platforms, using tools like wrk2 & oha with detailed documentation. Helped established a post-release verification framework for the cluster.
-* Developed a PowerShell **Module for Active Directory object attribute validations** with alerting, and automatic remediation capabilities, enabled through declarative configuration.
-* Built an **ETL pipeline** with reporting facility in Python, which processes 0.5 million records every day. 
+* Implemented a C# **authentication adapter** for ADFS, enabling multi-factor authentication (MFA) for 3,000+ employees. Improved security by supporting customizable workflows, now used firm-wide as the primary authentication system.
+* **Benchmarked** and documented the **performance** of on-prem **Kubernetes** cluster against the in-house cluster management system. Insights enabled better decision-making, and helped establish a post-release verification framework for the cluster.
+* Led development of a Python-based **responsive web app** for on-call management, secured with OIDC, and deployed on Kubernetes. Streamlined scheduling for 300+ employees and 20+ services, reducing management overhead and improving team coordination.
+* Developed a C# based **web proxy** for providing fine-grained authorization to external authentication APIs and streamlined user/device management workflows for 100+ members of the Helpdesk team.
+* Built an **ETL pipeline** in Python which processes 1M records daily to monitor EULA compliance of installed software.

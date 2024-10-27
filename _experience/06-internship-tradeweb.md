@@ -6,4 +6,4 @@ tagline: Software Engineering Intern
 link: https://www.tradeweb.com/
 ---
 
-* Implemented backend pagination of a high-volume data Search Service in Java, optimizing Apache Lucene queries to support paginated results. Integrated frontend pagination controls and filtering using ExtJS. Ensured data accuracy with real-time page updates. Used Apache Cassandra as database.
+* Built an end-to-end real-time **pagination feature** for a high-volume data **search service** in Java using Apache Lucene. Reduced search load times by 80%, significantly improving the system performance and user experience across the platform.
